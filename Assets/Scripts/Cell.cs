@@ -16,7 +16,7 @@ public class Cell : MonoBehaviour
 	public int cellType;
 
 	// The in and out directions of the cell (if it is a snake type).
-	private int snakeInDirection, snakeOutDirection;
+	private Direction snakeInDirection, snakeOutDirection;
 
 	// Initializes the cellColors array and the cell.
 	private void Start()
@@ -26,7 +26,7 @@ public class Cell : MonoBehaviour
 		cellColors[2] = Color.yellow;
 		cellColors[3] = Color.red;
 		cellColors[4] = Color.blue;
-		cellColors[5] = Color.blue;
+		cellColors[5] = Color.cyan;
 		cellColors[6] = Color.black;
 		SetCell(cellType);
 	}
@@ -40,7 +40,7 @@ public class Cell : MonoBehaviour
 	}
 
 	// This variant of SetCell() allows the snake in/out direction to be set as well.
-	public void SetCell(int cellType, int snakeInDirection, int snakeOutDirection)
+	public void SetCell(int cellType, Direction snakeInDirection, Direction snakeOutDirection)
 	{
 		this.cellType = cellType;
 		this.snakeInDirection = snakeInDirection;

@@ -34,11 +34,11 @@ public static class DirectionExtensions
 	{
 		switch (direction) {
 			case (Direction.UP): 			return 1;
-			case (Direction.UP_RIGHT):		return (isColUpper) ? 1 : 0;
+			case (Direction.UP_RIGHT):		return (isColUpper) ? 0 : 1;
 			case (Direction.DOWN_RIGHT):	return (isColUpper) ? -1 : 0;
 			case (Direction.DOWN):			return -1;
 			case (Direction.DOWN_LEFT):		return (isColUpper) ? -1 : 0;
-			case (Direction.UP_LEFT):		return (isColUpper) ? 1 : 0;
+			case (Direction.UP_LEFT):		return (isColUpper) ? 0 : 1;
 			default:						return 0;
 		}
 	}

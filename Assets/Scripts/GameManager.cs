@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		// Places the snake and a food item on the grid.
-		PlaceSnake(5, 5, 2, Direction.UP);
+		PlaceSnake(5, 5, 5, Direction.UP_RIGHT);
 		PlaceFood();
 	}
 

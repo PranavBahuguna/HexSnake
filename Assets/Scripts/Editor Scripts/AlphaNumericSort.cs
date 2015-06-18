@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+/* Provides the option to sort objects in alphanumeric order, rather than by
+ * transform. */
 public class AlphaNumericSort : BaseHierarchySort
 {
 	public override int Compare(GameObject lhs, GameObject rhs)

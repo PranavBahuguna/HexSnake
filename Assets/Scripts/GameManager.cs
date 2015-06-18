@@ -3,11 +3,13 @@ using System.Collections;
 
 /* Initialises the game and handles its execution behaviour */
 public class GameManager : MonoBehaviour
-{	
+{
+	// Parameters for snake placement on the Cell grid.
 	public int snakeTailPosX, snakeTailPosY, snakeLength;
 	public Direction snakeDirection;
 
-	// A 2D grid of Cell objects that will be filled by searching for existing Cells.
+	// A 2D grid of Cell objects that will be filled with existing Cell objects
+	// in the scene.
 	private Cell[][] grid;
 
 	private void Start ()
@@ -24,10 +26,6 @@ public class GameManager : MonoBehaviour
 			}
 		}
 
-		for (int i = 0; i < 10; i++) {
-			print (grid[1][i].gameObject);
-		}
-
 		// Places the snake and a food item on the grid.
 		PlaceSnake(snakeTailPosX, snakeTailPosY, snakeLength, snakeDirection);
 		PlaceFood();
@@ -37,34 +35,37 @@ public class GameManager : MonoBehaviour
 	private void Update () { }
 
 	// Places the snake at a set length, direction and positions on the grid.
-	private void PlaceSnake(int tailPosX, int tailPosY, int length, Direction snakeOutDirection)
+	private void PlaceSnake(int tailPosX, int tailPosY, int length,
+							Direction outDirection)
 	{
-		int segmentPosX = tailPosX;	// The horizontal position of the current snake segment.
-		int segmentPosY = tailPosY; // The vertical position of the current snake segment.
-		int segmentsLeft = length;	// Keeps track of the number of segments left to place.
+		int segmentPosX = tailPosX;	// Horizontal pos of current snake segment.
+		int segmentPosY = tailPosY; // Vertical pos of current snake segment.
+		int segmentsLeft = length;	// Keeps number of segments left to place.
 
 		// Finds the opposite snake direction.
-		Direction snakeInDirection = DirectionExtensions.Opposite(snakeOutDirection);
+		Direction inDirection = DirectionExtensions.Opposite(outDirection);
 
 		// Iterates over each segment of the snake.
 		while (segmentsLeft > 0) {
 
 			// Decides which cell type to use given the number of segments left.
-			int snakeCellType;
+			Cell.State snakeCellType;
 			if (segmentsLeft == length) {
-				snakeCellType = (int)Cell.States.SNAKE_TAIL;
+				snakeCellType = Cell.State.SNAKE_TAIL;
 			} else if (segmentsLeft == 1) {
-				snakeCellType = (int)Cell.States.SNAKE_HEAD;
+				snakeCellType = Cell.State.SNAKE_HEAD;
 			} else {
-				snakeCellType = (int)Cell.States.SNAKE_BODY;
+				snakeCellType = Cell.State.SNAKE_BODY;
 			}
 
-			// Sets the cell at the current x/y position to be of the decided snake cell type.
-			grid[segmentPosX][segmentPosY].SetCell(snakeCellType, snakeInDirection, snakeOutDirection);
+			// Sets cell at x/y pos to be of the decided snake cell type.
+			grid[segmentPosX][segmentPosY].SetCell(snakeCellType,
+				inDirection, outDirection);
 
 			// Calculates the x/y positions for the next snake segment.
-			segmentPosX += DirectionExtensions.DeltaX(snakeOutDirection);
-			segmentPosY += DirectionExtensions.DeltaY(snakeOutDirection, isColUpper(segmentPosX));
+			segmentPosX += DirectionExtensions.DeltaX(outDirection);
+			segmentPosY += DirectionExtensions.DeltaY(outDirection,
+				isColUpper(segmentPosX));
 			segmentsLeft--;	// Decrements segmentsLeft count.
 		}
 	}
@@ -72,38 +73,22 @@ public class GameManager : MonoBehaviour
 	// Places a food item in a random position on the field.
 	private void PlaceFood()
 	{
+		// Assumes there is at least one clear cell in the grid. If not clear,
+		// another random cell is chosen until a clear cell is found. That Cell
+		// has its state set to Food.
 		int randomCol, randomRow;
 		do {
 			randomCol = (int)(Random.value * grid.Length);
 			randomRow = (int)(Random.value * grid [randomCol].Length);
-		} while (grid[randomCol][randomRow].cellType != (int)Cell.States.CLEAR);
-		grid[randomCol][randomRow].SetCell((int)Cell.States.FOOD);
+		}
+		while (grid[randomCol][randomRow].cellType != Cell.State.CLEAR);
+		grid[randomCol][randomRow].SetCell(Cell.State.FOOD);
 	}
 
-	// Determines whether a column of cells in the grid appears 'higher' than its neighbouring
-	// columns.
+	// Determines whether a column of cells in the grid appears 'higher' than
+	// its neighbouring columns.
 	private bool isColUpper(int col)
 	{
 		return (col % 2 == 0);
 	}
 }
-//EditorApplication.isPaused = true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

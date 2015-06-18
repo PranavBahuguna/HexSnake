@@ -4,16 +4,17 @@ using System.Collections;
 /* Defines the possible directions of the snake grid and provides
  * additional helper methods. */
 public enum Direction {UP, UP_RIGHT, DOWN_RIGHT, DOWN, DOWN_LEFT, UP_LEFT}
+
 public static class DirectionExtensions
 {
 	// Returns the direction opposite to the one given as argument.
 	public static Direction Opposite(Direction direction)
 	{
-		return (Direction)((int)(direction + 3) % 6); 
+		return (Direction)((int)(direction + 3) % 6);
 	}
 
-	// Determines the horizontal displacement given by moving in the given direction
-	// by one unit.
+	// Determines the horizontal displacement given by moving in the given
+	// direction by one unit.
 	public static int DeltaX(Direction direction)
 	{
 		switch (direction) {
@@ -27,9 +28,9 @@ public static class DirectionExtensions
 		}
 	}
 
-	// Determines the vertical displacement given by moving in the given direction
-	// by one unit. This takes an additional bool 'isColUpper' (whether a column of
-	// cells 'looks' higher than its neighbouring columns).
+	// Determines the vertical displacement given by moving in the given
+	// direction by one unit. This takes an additional bool 'isColUpper'
+	// (whether a column of cells 'looks' higher than its neighbouring columns).
 	public static int DeltaY(Direction direction, bool isColUpper)
 	{
 		switch (direction) {

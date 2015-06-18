@@ -4,6 +4,10 @@ using System.Collections;
 /* Initialises the game and handles its execution behaviour */
 public class GameManager : MonoBehaviour
 {	
+	public int snakeTailPosX, snakeTailPosY, snakeLength;
+	public Direction snakeDirection;
+
+	// A 2D grid of Cell objects that will be filled by searching for existing Cells.
 	private Cell[][] grid;
 
 	private void Start ()
@@ -25,7 +29,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		// Places the snake and a food item on the grid.
-		PlaceSnake(5, 5, 5, Direction.UP_RIGHT);
+		PlaceSnake(snakeTailPosX, snakeTailPosY, snakeLength, snakeDirection);
 		PlaceFood();
 	}
 

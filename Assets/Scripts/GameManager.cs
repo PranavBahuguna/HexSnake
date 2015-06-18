@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 			randomCol = (int)(Random.value * grid.Length);
 			randomRow = (int)(Random.value * grid [randomCol].Length);
 		} while (grid[randomCol][randomRow].cellType != (int)Cell.States.CLEAR);
-		grid[randomCol][randomRow].setCell((int)Cell.States.FOOD);
+		grid[randomCol][randomRow].SetCell((int)Cell.States.FOOD);
 	}
 }
 //EditorApplication.isPaused = true

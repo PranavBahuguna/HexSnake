@@ -28,14 +28,24 @@ public class Cell : MonoBehaviour
 		cellColors[4] = Color.blue;
 		cellColors[5] = Color.blue;
 		cellColors[6] = Color.black;
-		setCell(cellType);
+		SetCell(cellType);
 	}
 
 	// Sets the type of the cell and applies its associated color to the
 	// cell sprite.
-	public void setCell(int cellType)
+	public void SetCell(int cellType)
 	{
 		this.cellType = cellType;
 		GetComponent<SpriteRenderer>().color = cellColors[cellType];
 	}
+
+	// This variant of SetCell() allows the snake in/out direction to be set as well.
+	public void SetCell(int cellType, int snakeInDirection, int snakeOutDirection)
+	{
+		this.cellType = cellType;
+		this.snakeInDirection = snakeInDirection;
+		this.snakeOutDirection = snakeOutDirection;
+		GetComponent<SpriteRenderer>().color = cellColors[cellType];
+	}
+
 }

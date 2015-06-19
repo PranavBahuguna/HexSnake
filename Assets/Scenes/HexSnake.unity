@@ -5347,11 +5347,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba35242e0638a8f4da31028161fd4a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailPosX: 4
-  tailPosY: 4
+  tailPosX: 5
+  tailPosY: 5
   snakeLength: 3
-  snakeDirection: 0
-  speed: .5
+  snakeDirection: 1
+  speed: 2
 --- !u!4 &1036598931
 Transform:
   m_ObjectHideFlags: 0

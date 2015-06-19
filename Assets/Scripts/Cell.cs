@@ -17,7 +17,7 @@ public class Cell : MonoBehaviour
 	public State cellType;
 
 	// The in and out directions of the cell (if it is a snake type).
-	private Direction snakeInDirection, snakeOutDirection;
+	private Direction inDirection, outDirection;
 
 	// Initializes the cellColors array and the cell.
 	private void Start()
@@ -42,13 +42,24 @@ public class Cell : MonoBehaviour
 
 	// This variant of SetCell() allows the snake in/out direction to be set as
 	// well.
-	public void SetCell(State cellType, Direction snakeInDirection,
-						Direction snakeOutDirection)
+	public void SetCell(State cellType, Direction inDirection,
+						Direction outDirection)
 	{
 		this.cellType = cellType;
-		this.snakeInDirection = snakeInDirection;
-		this.snakeOutDirection = snakeOutDirection;
+		this.inDirection = inDirection;
+		this.outDirection = outDirection;
 		GetComponent<SpriteRenderer>().color = cellColors[(int)cellType];
 	}
 
+	// Getter method for outDirection()
+	public Direction GetOutDirection()
+	{
+		return outDirection;
+	}
+
+	// Getter method for inDirection()
+	public Direction GetInDirection()
+	{
+		return inDirection;
+	}
 }

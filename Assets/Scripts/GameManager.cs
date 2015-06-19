@@ -6,12 +6,13 @@ public class GameManager : MonoBehaviour
 {
 	// Parameters for snake placement on the Cell grid.
 	public int tailPosX, tailPosY, snakeLength;
-	public Direction snakeDirection;
+	public Direction tailDirection;
 
 	public float speed = 0.2f;	// How quickly the snake moves.
 
 	// Keeps track of the snake head position on the grid;
 	private int headPosX, headPosY;
+	private Direction headDirection;
 
 	// Whether the snake segment has collided with something.
 	private bool snakeCrashed = false;
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		// Places the snake and a food item on the grid.
-		PlaceSnake(tailPosX, tailPosY, snakeLength, snakeDirection);
+		PlaceSnake(tailPosX, tailPosY, snakeLength, tailDirection);
 		PlaceFood();
 	}
 
@@ -46,14 +47,14 @@ public class GameManager : MonoBehaviour
 			if (! snakeCrashed) {
 
 				// Obtains the new snake direction.
-				snakeDirection = DirectionExtensions.GetDirection(snakeDirection);
+				headDirection = DirectionExtensions.GetDirection(headDirection);
 
 				// Calculates the new snake head position and checks if there will
 				// be a crash there.
 				int newHeadPosX = headPosX
-					+ DirectionExtensions.DeltaX(snakeDirection);
+					+ DirectionExtensions.DeltaX(headDirection);
 				int newHeadPosY = headPosY
-					+ DirectionExtensions.DeltaY(snakeDirection, isColUpper(headPosX));
+					+ DirectionExtensions.DeltaY(headDirection, isColUpper(newHeadPosX));
 
 				if (grid[newHeadPosX][newHeadPosY].cellType != Cell.State.CLEAR &&
 				    grid[newHeadPosX][newHeadPosY].cellType != Cell.State.FOOD) {
@@ -62,8 +63,32 @@ public class GameManager : MonoBehaviour
 					Debug.Break();
 				}
 
-				// Moves snake head to new position
-				grid[newHeadPosX][newHeadPosY].SetCell(Cell.State.SNAKE_HEAD);
+				// Moves snake head to new position and sets the old head cell to be a body
+				// part if snake has a length greater than 2.
+				grid[newHeadPosX][newHeadPosY].SetCell(Cell.State.SNAKE_HEAD,
+                	DirectionExtensions.Opposite(headDirection), headDirection);
+				if (snakeLength > 2) {
+					grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_BODY,
+                    	DirectionExtensions.Opposite(headDirection), headDirection);
+				} else {
+					grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_HEAD,
+                    	DirectionExtensions.Opposite(headDirection), headDirection);
+				}
+				headPosX = newHeadPosX;
+				headPosY = newHeadPosY;
+
+				// Calculates the new tail position and direction, and sets the old tail cell
+				// clear.
+				grid[tailPosX][tailPosY].SetCell(Cell.State.CLEAR);
+				tailPosX += DirectionExtensions.DeltaX(tailDirection);
+				tailPosY += DirectionExtensions.DeltaY(tailDirection, isColUpper(tailPosX));
+				tailDirection = grid[tailPosX][tailPosY].GetOutDirection();
+				print (tailDirection);
+
+				// Finally, sets the new cell to be a tail.
+				grid[tailPosX][tailPosY].SetCell(Cell.State.SNAKE_TAIL,
+                	DirectionExtensions.Opposite(tailDirection), tailDirection);
+
 			}
 		}
 	}

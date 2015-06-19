@@ -58,15 +58,16 @@ public static class DirectionExtensions
 	}
 
 	// Finds a direction, given the keys pressed and the current direction
-	public static Direction GetDirection(Direction direction) {
+	public static Direction GetDirection(Direction direction)
+	{
 
 		// Sets the keysIndex from 0 to 7 based on the keys pressed - it starts
 		// from the up key and increments in a clockwise manner.
 		int keysIndex = 0;
 		bool up 	= Input.GetKey(KeyCode.UpArrow);
 		bool right	= Input.GetKey(KeyCode.RightArrow);
-		bool down	= Input.GetKey(KeyCode.RightArrow);
-		bool left	= Input.GetKey(KeyCode.RightArrow);
+		bool down	= Input.GetKey(KeyCode.DownArrow);
+		bool left	= Input.GetKey(KeyCode.LeftArrow);
 
 		if (up && !right && !down && !left) 			{ keysIndex = 0; }
 			else if (up && right && !down && !left) 	{ keysIndex = 1; }

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
 	public float speed = 1.0f;	// How quickly the snake moves.
 
-	// Keeps track of the snake head x/y position on the grid;
+	// Keeps track of the snake head position on the grid;
 	private int snakeHeadPosX, snakeHeadPosY;
 
 	// Whether the snake segment has collided with something.
@@ -43,7 +43,9 @@ public class GameManager : MonoBehaviour
 	private void Update()
 	{
 		if (Extensions.TimestepComplete (1 / speed)) {
-			print("AYYY");
+			if (! snakeCrashed) {
+				moveSnake();
+			}
 		}
 	}
 

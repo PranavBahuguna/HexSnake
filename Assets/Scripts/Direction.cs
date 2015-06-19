@@ -78,6 +78,12 @@ public static class DirectionExtensions
 			else if (up && !right && !down && left) 	{ keysIndex = 7;
 		}
 
-		return (Direction) directionFromKeysArray[keysIndex][(int)direction];
+		// Returns the new direction, or if none of the keys were pressed, the 
+		// same direction as the one passed as argument.
+		if (up || right || down || left) {
+			return (Direction)directionFromKeysArray [keysIndex] [(int)direction];
+		} else {
+			return direction;
+		}
 	}
 }

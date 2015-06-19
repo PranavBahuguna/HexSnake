@@ -5,13 +5,13 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
 	// Parameters for snake placement on the Cell grid.
-	public int snakeTailPosX, snakeTailPosY, snakeLength;
+	public int tailPosX, tailPosY, snakeLength;
 	public Direction snakeDirection;
 
-	public float speed = 1.0f;	// How quickly the snake moves.
+	public float speed = 0.2f;	// How quickly the snake moves.
 
 	// Keeps track of the snake head position on the grid;
-	private int snakeHeadPosX, snakeHeadPosY;
+	private int headPosX, headPosY;
 
 	// Whether the snake segment has collided with something.
 	private bool snakeCrashed = false;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		// Places the snake and a food item on the grid.
-		PlaceSnake(snakeTailPosX, snakeTailPosY, snakeLength, snakeDirection);
+		PlaceSnake(tailPosX, tailPosY, snakeLength, snakeDirection);
 		PlaceFood();
 	}
 
@@ -44,7 +44,26 @@ public class GameManager : MonoBehaviour
 	{
 		if (Extensions.TimestepComplete (1 / speed)) {
 			if (! snakeCrashed) {
-				moveSnake();
+
+				// Obtains the new snake direction.
+				snakeDirection = DirectionExtensions.GetDirection(snakeDirection);
+
+				// Calculates the new snake head position and checks if there will
+				// be a crash there.
+				int newHeadPosX = headPosX
+					+ DirectionExtensions.DeltaX(snakeDirection);
+				int newHeadPosY = headPosY
+					+ DirectionExtensions.DeltaY(snakeDirection, isColUpper(headPosX));
+
+				if (grid[newHeadPosX][newHeadPosY].cellType != Cell.State.CLEAR &&
+				    grid[newHeadPosX][newHeadPosY].cellType != Cell.State.FOOD) {
+					print(grid[newHeadPosX][newHeadPosY].cellType);
+					// For now, stops game.
+					Debug.Break();
+				}
+
+				// Moves snake head to new position
+				grid[newHeadPosX][newHeadPosY].SetCell(Cell.State.SNAKE_HEAD);
 			}
 		}
 	}
@@ -69,8 +88,8 @@ public class GameManager : MonoBehaviour
 				snakeCellType = Cell.State.SNAKE_TAIL;
 			} else if (segmentsLeft == 1) {
 				snakeCellType = Cell.State.SNAKE_HEAD;
-				snakeHeadPosX = segmentPosX;
-				snakeHeadPosY = segmentPosY;
+				headPosX = segmentPosX;
+				headPosY = segmentPosY;
 			} else {
 				snakeCellType = Cell.State.SNAKE_BODY;
 			}
@@ -100,11 +119,6 @@ public class GameManager : MonoBehaviour
 		}
 		while (grid[randomCol][randomRow].cellType != Cell.State.CLEAR);
 		grid[randomCol][randomRow].SetCell(Cell.State.FOOD);
-	}
-
-	// Attempts to move the snake by one unit to a new position.
-	private void moveSnake()
-	{
 	}
 
 	// Determines whether a column of cells in the grid appears 'higher' than

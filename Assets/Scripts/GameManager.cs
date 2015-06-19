@@ -8,6 +8,14 @@ public class GameManager : MonoBehaviour
 	public int snakeTailPosX, snakeTailPosY, snakeLength;
 	public Direction snakeDirection;
 
+	public float speed = 1.0f;	// How quickly the snake moves.
+
+	// Keeps track of the snake head x/y position on the grid;
+	private int snakeHeadPosX, snakeHeadPosY;
+
+	// Whether the snake segment has collided with something.
+	private bool snakeCrashed = false;
+
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
 	private Cell[][] grid;
@@ -32,7 +40,12 @@ public class GameManager : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	private void Update () { }
+	private void Update()
+	{
+		if (Extensions.TimestepComplete (1 / speed)) {
+			print("AYYY");
+		}
+	}
 
 	// Places the snake at a set length, direction and positions on the grid.
 	private void PlaceSnake(int tailPosX, int tailPosY, int length,
@@ -54,6 +67,8 @@ public class GameManager : MonoBehaviour
 				snakeCellType = Cell.State.SNAKE_TAIL;
 			} else if (segmentsLeft == 1) {
 				snakeCellType = Cell.State.SNAKE_HEAD;
+				snakeHeadPosX = segmentPosX;
+				snakeHeadPosY = segmentPosY;
 			} else {
 				snakeCellType = Cell.State.SNAKE_BODY;
 			}
@@ -83,6 +98,11 @@ public class GameManager : MonoBehaviour
 		}
 		while (grid[randomCol][randomRow].cellType != Cell.State.CLEAR);
 		grid[randomCol][randomRow].SetCell(Cell.State.FOOD);
+	}
+
+	// Attempts to move the snake by one unit to a new position.
+	private void moveSnake()
+	{
 	}
 
 	// Determines whether a column of cells in the grid appears 'higher' than

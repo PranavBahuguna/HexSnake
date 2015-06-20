@@ -43,52 +43,66 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		if (Extensions.TimestepComplete (1 / speed)) {
-			if (! snakeCrashed) {
+		if (Extensions.TimestepComplete(1 / speed) && !snakeCrashed)
+		{
+			// Obtains the new snake direction.
+			headDirection = DirectionExtensions.GetDirection(headDirection);
 
-				// Obtains the new snake direction.
-				headDirection = DirectionExtensions.GetDirection(headDirection);
+			// Calculates the new snake head position and checks if there
+			// will be a crash there.
+			int newHeadPosX = headPosX +
+				DirectionExtensions.DeltaX(headDirection);
+			int newHeadPosY = headPosY +
+				DirectionExtensions.DeltaY(headDirection,
+					isColUpper(newHeadPosX));
 
-				// Calculates the new snake head position and checks if there will
-				// be a crash there.
-				int newHeadPosX = headPosX
-					+ DirectionExtensions.DeltaX(headDirection);
-				int newHeadPosY = headPosY
-					+ DirectionExtensions.DeltaY(headDirection, isColUpper(newHeadPosX));
+			// Finds the cell type of the new position.
+			Cell.State newPosCellType = grid[newHeadPosX][newHeadPosY].cellType;
 
-				if (grid[newHeadPosX][newHeadPosY].cellType != Cell.State.CLEAR &&
-				    grid[newHeadPosX][newHeadPosY].cellType != Cell.State.FOOD) {
-					print(grid[newHeadPosX][newHeadPosY].cellType);
-					// For now, stops game.
-					Debug.Break();
-				}
+			if (newPosCellType != Cell.State.CLEAR &&
+			    newPosCellType != Cell.State.FOOD) {
+				print(grid[newHeadPosX][newHeadPosY].cellType);
+				// For now, stops game.
+				Debug.Break();
+				return;
+			}
 
-				// Moves snake head to new position and sets the old head cell to be a body
-				// part if snake has a length greater than 2.
-				grid[newHeadPosX][newHeadPosY].SetCell(Cell.State.SNAKE_HEAD,
+			// If the new cell is of food type, score is incremented and food
+			// is replaced on the grid.
+			if (newPosCellType == Cell.State.FOOD) {
+				snakeLength++;
+				PlaceFood();
+			}
+
+			// Moves snake head to new position and sets the old head cell to be
+			// a body part if snake has a length greater than 2.
+			grid[newHeadPosX][newHeadPosY].SetCell(Cell.State.SNAKE_HEAD,
+            	DirectionExtensions.Opposite(headDirection), headDirection);
+			if (snakeLength > 2) {
+				grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_BODY,
                 	DirectionExtensions.Opposite(headDirection), headDirection);
-				if (snakeLength > 2) {
-					grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_BODY,
-                    	DirectionExtensions.Opposite(headDirection), headDirection);
-				} else {
-					grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_HEAD,
-                    	DirectionExtensions.Opposite(headDirection), headDirection);
-				}
-				headPosX = newHeadPosX;
-				headPosY = newHeadPosY;
+			} else {
+				grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_HEAD,
+                	DirectionExtensions.Opposite(headDirection), headDirection);
+			}
+			headPosX = newHeadPosX;
+			headPosY = newHeadPosY;
 
-				// Calculates the new tail position and direction, and sets the old tail cell
-				// clear.
+ 			// If the snake ate food, the tail is prevented from moving, thus
+			// incrementing the snake length.
+			if (newPosCellType != Cell.State.FOOD) {
+				
+				// Calculates the new tail position and direction, and sets the
+				// old tail cell clear.
 				grid[tailPosX][tailPosY].SetCell(Cell.State.CLEAR);
 				tailPosX += DirectionExtensions.DeltaX(tailDirection);
-				tailPosY += DirectionExtensions.DeltaY(tailDirection, isColUpper(tailPosX));
+				tailPosY += DirectionExtensions.DeltaY(tailDirection,
+								isColUpper(tailPosX));
 				tailDirection = grid[tailPosX][tailPosY].GetOutDirection();
-				print (tailDirection);
 
 				// Finally, sets the new cell to be a tail.
 				grid[tailPosX][tailPosY].SetCell(Cell.State.SNAKE_TAIL,
-                	DirectionExtensions.Opposite(tailDirection), tailDirection);
-
+	            	DirectionExtensions.Opposite(tailDirection), tailDirection);
 			}
 		}
 	}

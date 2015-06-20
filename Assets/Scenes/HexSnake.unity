@@ -5349,8 +5349,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tailPosX: 5
   tailPosY: 5
-  snakeLength: 3
-  snakeDirection: 1
+  snakeLength: 4
+  tailDirection: 0
   speed: 2
 --- !u!4 &1036598931
 Transform:

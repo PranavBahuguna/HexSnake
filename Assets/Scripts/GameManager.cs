@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
 				DirectionExtensions.DeltaY(headDirection,
 					isColUpper(newHeadPosX));
 
+			// Corrects head positions.
+			Vector2 correctedPosition = CorrectPosition(newHeadPosX, newHeadPosY);
+			newHeadPosX = (int)correctedPosition.x;
+			newHeadPosY = (int)correctedPosition.y;
+
 			// Finds the cell type of the new position.
 			Cell.State newPosCellType = grid[newHeadPosX][newHeadPosY].cellType;
 
@@ -92,15 +97,19 @@ public class GameManager : MonoBehaviour
 			// incrementing the snake length.
 			if (newPosCellType != Cell.State.FOOD) {
 				
-				// Calculates the new tail position and direction, and sets the
-				// old tail cell clear.
+				// Calculates the new tail position and sets the old tail cell clear.
 				grid[tailPosX][tailPosY].SetCell(Cell.State.CLEAR);
 				tailPosX += DirectionExtensions.DeltaX(tailDirection);
 				tailPosY += DirectionExtensions.DeltaY(tailDirection,
 								isColUpper(tailPosX));
-				tailDirection = grid[tailPosX][tailPosY].GetOutDirection();
 
-				// Finally, sets the new cell to be a tail.
+				// Corrects tail positions, then sets
+				correctedPosition = CorrectPosition(tailPosX, tailPosY);
+				tailPosX = (int)correctedPosition.x;
+				tailPosY = (int)correctedPosition.y;
+
+				// Finally, sets direction and type of new cell to be a tail.
+				tailDirection = grid[tailPosX][tailPosY].GetOutDirection();
 				grid[tailPosX][tailPosY].SetCell(Cell.State.SNAKE_TAIL,
 	            	DirectionExtensions.Opposite(tailDirection), tailDirection);
 			}
@@ -143,6 +152,34 @@ public class GameManager : MonoBehaviour
 				isColUpper(segmentPosX));
 			segmentsLeft--;	// Decrements segmentsLeft count.
 		}
+	}
+
+	// Takes an x and y coordinates as arguments and checks whether that position
+	// is contained within the grid. If not, it returns a new position at the
+	// opposite edge to where the old position was out of bounds at.
+	private Vector2 CorrectPosition(int x, int y)
+	{
+		int newPosX, newPosY;
+
+		// Corrects x position.
+		if (x < 0) {
+			newPosX = grid.Length - 1;
+		} else if (x >= grid.Length) {
+			newPosX = 0;
+		} else {
+			newPosX = x;
+		}
+
+		// Corrects y position.
+		if (y < 0) {
+			newPosY = grid[newPosX].Length - 1;
+		} else if (y >= grid[newPosX].Length) {
+			newPosY = 0;
+		} else {
+			newPosY = y;
+		}
+
+		return new Vector2(newPosX, newPosY);
 	}
 
 	// Places a food item in a random position on the field.

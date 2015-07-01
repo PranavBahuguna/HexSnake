@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 /* Initialises the game and handles its execution behaviour */
 public class GameManager : MonoBehaviour
@@ -21,8 +22,14 @@ public class GameManager : MonoBehaviour
 	// in the scene.
 	private Cell[][] grid;
 
+	// The current score displayed on UI
+	private Text score;
+
 	private void Start ()
 	{
+		// Obtains UI Text element for score.
+		score = GameObject.Find("Score_Number").GetComponent<Text>();
+
 		// Initialises and fills the grid array.
 		Transform field = GameObject.Find("Field").transform;
 		grid = new Cell[field.childCount][];
@@ -95,8 +102,11 @@ public class GameManager : MonoBehaviour
 
  			// If the snake ate food, the tail is prevented from moving, thus
 			// incrementing the snake length.
-			if (newPosCellType != Cell.State.FOOD) {
-				
+			if (newPosCellType == Cell.State.FOOD) {
+				UpdateScore(10); // For now, simply adds 10 points to score.
+			} 
+			// Otherwise allows tail to move by calculating the new pos/direction.
+			else {
 				// Calculates the new tail position and sets the old tail cell clear.
 				grid[tailPosX][tailPosY].SetCell(Cell.State.CLEAR);
 				tailPosX += DirectionExtensions.DeltaX(tailDirection);
@@ -108,7 +118,7 @@ public class GameManager : MonoBehaviour
 				tailPosX = (int)correctedPosition.x;
 				tailPosY = (int)correctedPosition.y;
 
-				// Finally, sets direction and type of new cell to be a tail.
+				// Sets direction and type of new cell to be a tail.
 				tailDirection = grid[tailPosX][tailPosY].GetOutDirection();
 				grid[tailPosX][tailPosY].SetCell(Cell.State.SNAKE_TAIL,
 	            	DirectionExtensions.Opposite(tailDirection), tailDirection);
@@ -202,5 +212,12 @@ public class GameManager : MonoBehaviour
 	private bool isColUpper(int col)
 	{
 		return (col % 2 == 0);
+	}
+
+	// Allows the score to be updated at a certain event given several
+	// circumstances.
+	private void UpdateScore(int rawPoints)
+	{
+		score.text = int.Parse(score.text) + rawPoints + "";
 	}
 }

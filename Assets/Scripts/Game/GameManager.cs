@@ -5,11 +5,19 @@ using UnityEngine.UI;
 /* Initialises the game and handles its execution behaviour */
 public class GameManager : MonoBehaviour
 {
+	// The keys used in game for controls.
+	public KeyCode moveUp;
+	public KeyCode moveRight;
+	public KeyCode moveDown;
+	public KeyCode moveLeft;
+	public KeyCode pauseGame;
+
 	// Parameters for snake placement on the Cell grid.
 	public int tailPosX, tailPosY, snakeLength;
 	public Direction tailDirection;
 
-	public float speed = 0.2f;	// How quickly the snake moves.
+	public float snakeSpeed;		// How quickly the snake moves.
+	private float currentSpeed; 	// The current speed of the snake.
 
 	// Keeps track of the snake head position on the grid;
 	private int headPosX, headPosY;
@@ -17,6 +25,9 @@ public class GameManager : MonoBehaviour
 
 	// Whether the snake segment has collided with something.
 	private bool snakeCrashed = false;
+
+	// Whether the game has paused.
+	private bool gamePaused = false;
 
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
@@ -42,6 +53,9 @@ public class GameManager : MonoBehaviour
 			}
 		}
 
+		// currentSpeed is set to match the snake speed.
+		currentSpeed = snakeSpeed;
+
 		// Places the snake and a food item on the grid.
 		PlaceSnake(tailPosX, tailPosY, snakeLength, tailDirection);
 		PlaceFood();
@@ -50,14 +64,26 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		if (Extensions.TimestepComplete(1 / speed) && !snakeCrashed)
+		if (Input.GetKey(pauseGame)) {
+			// If game is already paused, currentSpeed is set back to normal,
+			// otherwise it is set to 0, stopping the snake.
+			if (gamePaused) {
+				gamePaused = false;
+				currentSpeed = snakeSpeed;
+			} else {
+				gamePaused = true;
+				currentSpeed = 0;
+			}
+		}
+
+		if (currentSpeed > 0 && Extensions.TimestepComplete(1 / currentSpeed) && !snakeCrashed)
 		{
 			// Obtains the new snake direction.
 			headDirection = DirectionExtensions.GetDirection(headDirection,
-                            	Input.GetKey(KeyCode.UpArrow),
-                             	Input.GetKey(KeyCode.RightArrow),
-                             	Input.GetKey(KeyCode.DownArrow),
-                 				Input.GetKey(KeyCode.LeftArrow));
+                            	Input.GetKey(moveUp),
+                             	Input.GetKey(moveRight),
+                             	Input.GetKey(moveDown),
+                 				Input.GetKey(moveLeft));
 
 			// Calculates the new snake head position and checks if there
 			// will be a crash there.

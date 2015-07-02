@@ -53,7 +53,11 @@ public class GameManager : MonoBehaviour
 		if (Extensions.TimestepComplete(1 / speed) && !snakeCrashed)
 		{
 			// Obtains the new snake direction.
-			headDirection = DirectionExtensions.GetDirection(headDirection);
+			headDirection = DirectionExtensions.GetDirection(headDirection,
+                            	Input.GetKey(KeyCode.UpArrow),
+                             	Input.GetKey(KeyCode.RightArrow),
+                             	Input.GetKey(KeyCode.DownArrow),
+                 				Input.GetKey(KeyCode.LeftArrow));
 
 			// Calculates the new snake head position and checks if there
 			// will be a crash there.
@@ -73,7 +77,6 @@ public class GameManager : MonoBehaviour
 
 			if (newPosCellType != Cell.State.CLEAR &&
 			    newPosCellType != Cell.State.FOOD) {
-				print(grid[newHeadPosX][newHeadPosY].cellType);
 				// For now, stops game.
 				Debug.Break();
 				return;

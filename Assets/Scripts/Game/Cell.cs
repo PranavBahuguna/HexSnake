@@ -6,29 +6,18 @@ using System.Collections;
 public class Cell : MonoBehaviour
 {
 	// These are the possible states that a cell can be in.
-	public enum State {CLEAR, BORDER, FOOD, SNAKE_HEAD, SNAKE_BODY, SNAKE_TAIL,
-					   OBSTACLE};
-
-	// An array of sprite colors that are associated with each of the
-	// possible states of a cell.
-	private Color[] cellColors = new Color[7];
-
-	// The current state of the cell.
-	public State cellType;
+	public enum State {CLEAR, OBSTACLE, FOOD, SNAKE_HEAD, SNAKE_BODY, SNAKE_TAIL};
+	
+	public State cellType;		 	// The current state of the cell.
+	private CellColor cellColor;	// Accessor to the CellColor singleton.
 
 	// The in and out directions of the cell (if it is a snake type).
 	private Direction inDirection, outDirection;
 
 	// Initializes the cellColors array and the cell.
-	private void Start()
+	private void Awake()
 	{
-		cellColors[0] = Color.green;
-		cellColors[1] = Color.gray;
-		cellColors[2] = Color.yellow;
-		cellColors[3] = Color.red;
-		cellColors[4] = Color.blue;
-		cellColors[5] = Color.cyan;
-		cellColors[6] = Color.black;
+		cellColor = GameObject.Find("CellColor").GetComponent<CellColor>();
 		SetCell(cellType);
 	}
 
@@ -37,7 +26,7 @@ public class Cell : MonoBehaviour
 	public void SetCell(State cellType)
 	{
 		this.cellType = cellType;
-		GetComponent<SpriteRenderer>().color = cellColors[(int)cellType];
+		GetComponent<SpriteRenderer>().color = cellColor.GetColor(cellType);
 	}
 
 	// This variant of SetCell() allows the snake in/out direction to be set as
@@ -48,7 +37,7 @@ public class Cell : MonoBehaviour
 		this.cellType = cellType;
 		this.inDirection = inDirection;
 		this.outDirection = outDirection;
-		GetComponent<SpriteRenderer>().color = cellColors[(int)cellType];
+		GetComponent<SpriteRenderer>().color = cellColor.GetColor(cellType);
 	}
 
 	// Getter method for outDirection()

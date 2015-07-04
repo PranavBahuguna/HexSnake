@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 	public KeyCode moveRight;
 	public KeyCode moveDown;
 	public KeyCode moveLeft;
-	public KeyCode pauseGame;
 
 	// Parameters for snake placement on the Cell grid.
 	public int tailPosX, tailPosY, snakeLength;
@@ -25,9 +24,6 @@ public class GameManager : MonoBehaviour
 
 	// Whether the snake segment has collided with something.
 	private bool snakeCrashed = false;
-
-	// Whether the game has paused.
-	private bool gamePaused = false;
 
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
@@ -64,19 +60,7 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		if (Input.GetKey(pauseGame)) {
-			// If game is already paused, currentSpeed is set back to normal,
-			// otherwise it is set to 0, stopping the snake.
-			if (gamePaused) {
-				gamePaused = false;
-				currentSpeed = snakeSpeed;
-			} else {
-				gamePaused = true;
-				currentSpeed = 0;
-			}
-		}
-
-		if (currentSpeed > 0 && Extensions.TimestepComplete(1 / currentSpeed) && !snakeCrashed)
+		if (Extensions.TimestepComplete(1 / currentSpeed) && !snakeCrashed)
 		{
 			// Obtains the new snake direction.
 			headDirection = DirectionExtensions.GetDirection(headDirection,

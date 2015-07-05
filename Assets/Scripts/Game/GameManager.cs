@@ -233,4 +233,10 @@ public class GameManager : MonoBehaviour
 	{
 		score.text = int.Parse(score.text) + rawPoints + "";
 	}
+
+	// Allows snake speed to be set
+	public void SetSnakeSpeed(float snakeSpeed)
+	{
+		this.snakeSpeed = snakeSpeed;
+	}
 }

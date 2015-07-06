@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 		score = GameObject.Find("Score_Number").GetComponent<Text>();
 
 		// Initialises and fills the grid array.
-		Transform field = GameObject.Find("Field").transform;
+		Transform field = GameObject.Find("Field_0").transform;
 		grid = new Cell[field.childCount][];
 		for (int i = 0; i < field.childCount; i++) {
 			Transform col = field.FindChild("Cells_Col_" + i.ToString());

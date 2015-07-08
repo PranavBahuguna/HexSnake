@@ -15,11 +15,15 @@ public class GameManager : MonoBehaviour
 	public int tailPosX, tailPosY, snakeLength;
 	public Direction tailDirection;
 
-	// Access to the selected level.
-	public Transform level;
-
-	public float snakeSpeed;		// How quickly the snake moves.
+	private float snakeSpeed = 5;	// How quickly the snake moves.
 	private float currentSpeed; 	// The current speed of the snake.
+
+	private int levelNum;			// Number of the selected level.
+	private Transform level;		// Access to the actual level.
+	private Canvas canvas;			// Access to the game canvas.
+
+	private bool powerupsEnabled  =	false;
+	private bool obstaclesEnabled = false;
 
 	// Keeps track of the snake head position on the grid;
 	private int headPosX, headPosY;
@@ -37,8 +41,10 @@ public class GameManager : MonoBehaviour
 
 	private void Start ()
 	{
-		// Obtains UI Text element for score.
-		score = GameObject.Find("Score_Number").GetComponent<Text>();
+		// Obtains the level from the level number.
+		level = Extensions.FindObject(GameObject.Find("Levels"), 
+		                              "Level_" + levelNum).GetComponent<Transform>();
+		level.gameObject.SetActive(true);
 
 		// Initialises and fills the grid array.
 		grid = new Cell[level.childCount][];
@@ -50,6 +56,14 @@ public class GameManager : MonoBehaviour
 				grid[i][j] = (Cell)row.GetComponent(typeof(Cell));
 			}
 		}
+
+		// Accesses and activates the game canvas.
+		canvas = Extensions.FindObject(transform.parent.gameObject,
+		                               "Game_Canvas").GetComponent<Canvas>();
+		canvas.gameObject.SetActive(true);
+
+		// Obtains UI Text element for score.
+		score = GameObject.Find("Score_Number").GetComponent<Text>();
 
 		// currentSpeed is set to match the snake speed.
 		currentSpeed = snakeSpeed;
@@ -236,9 +250,28 @@ public class GameManager : MonoBehaviour
 		score.text = int.Parse(score.text) + rawPoints + "";
 	}
 
+	// levelNum setter.
+	public void SetLevel(int levelNum)
+	{
+		this.levelNum = levelNum;
+	}
+
 	// Allows snake speed to be set
 	public void SetSnakeSpeed(float snakeSpeed)
 	{
-		this.snakeSpeed = snakeSpeed;
+		this.snakeSpeed = (int)snakeSpeed;
+		print (this.snakeSpeed);
+	}
+
+	// Toggles powerupsEnabled bool.
+	public void togglePowerups()
+	{
+		powerupsEnabled = !powerupsEnabled;
+	}
+
+	// Toggles obstaclesEnabled bool.
+	public void toggleObstacles()
+	{
+		obstaclesEnabled = !obstaclesEnabled;
 	}
 }

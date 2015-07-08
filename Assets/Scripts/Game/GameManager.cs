@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
 	public int tailPosX, tailPosY, snakeLength;
 	public Direction tailDirection;
 
+	// Access to the selected level.
+	public Transform level;
+
 	public float snakeSpeed;		// How quickly the snake moves.
 	private float currentSpeed; 	// The current speed of the snake.
 
@@ -38,12 +41,11 @@ public class GameManager : MonoBehaviour
 		score = GameObject.Find("Score_Number").GetComponent<Text>();
 
 		// Initialises and fills the grid array.
-		Transform field = GameObject.Find("Field_0").transform;
-		grid = new Cell[field.childCount][];
-		for (int i = 0; i < field.childCount; i++) {
-			Transform col = field.FindChild("Cells_Col_" + i.ToString());
+		grid = new Cell[level.childCount][];
+		for (int i = 0; i < level.childCount; i++) {
+			Transform col = level.FindChild("Cells_Col_" + i.ToString());
 			grid[i] = new Cell[col.childCount];
-			for (int j = 0; j < field.GetChild(i).childCount; j++) {
+			for (int j = 0; j < level.GetChild(i).childCount; j++) {
 				Transform row = col.FindChild("Cell_" + j.ToString());
 				grid[i][j] = (Cell)row.GetComponent(typeof(Cell));
 			}
@@ -205,7 +207,7 @@ public class GameManager : MonoBehaviour
 		return new Vector2(newPosX, newPosY);
 	}
 
-	// Places a food item in a random position on the field.
+	// Places a food item in a random position on the level.
 	private void PlaceFood()
 	{
 		// Assumes there is at least one clear cell in the grid. If not clear,

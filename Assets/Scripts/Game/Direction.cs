@@ -58,8 +58,8 @@ public static class DirectionExtensions
 	}
 
 	// Finds a direction, given the keys pressed and the current direction
-	public static Direction GetDirection(Direction direction, bool up, bool right,
-	                                     bool down, bool left)
+	public static Direction GetDirection(Direction direction, bool up,
+		bool right, bool down, bool left)
 	{
 
 		// Sets the keysIndex from 0 to 7 based on the keys pressed - it starts

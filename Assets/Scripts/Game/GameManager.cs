@@ -12,37 +12,39 @@ public class GameManager : MonoBehaviour
 	public KeyCode moveLeft;
 
 	// Parameters for snake placement on the Cell grid.
-	public int origTailPosX, origTailPosY, origSnakeLength;
+	public int origTailPosX, origTailPosY, origLength;
 	public Direction origTailDirection;
 
-	public GameObject gameOverScreen;	// Access to game over screen.
-	public Canvas canvas;				// Access to the game canvas.
-	public Text score;					// The score displayed on UI.
-	private Transform origLevel;		// Access to the original level.
-	private Transform level;			// Access to a copy of the original level.
-
-	private int tailPosX, tailPosY, snakeLength;
+	// Copies of the original placement parameters to record current position.
+	private int tailPosX, tailPosY, length;
 	private Direction tailDirection;
-	
-	private float snakeSpeed = 5;	// How quickly the snake moves.
-	private float currentSpeed; 	// The current speed of the snake.
-
-	private string levelName = "Bordered";	// Name of the selected level.
-	private bool powerupsEnabled  =	false;
-	private bool obstaclesEnabled = false;
 
 	// Keeps track of the snake head position on the grid;
 	private int headPosX, headPosY;
 	private Direction headDirection;
 
+	private float origSpeed = 5;	// Orig value of snake movement speed.
+	private float speed; 			// The current speed of the snake.
+
+	public GameObject gameOverScreen;	// Access to game over screen.
+	public Canvas canvas;				// Access to the game canvas.
+	public Text score;					// The score displayed on UI.
+	private Transform origLevel;		// Access to the original level.
+	private Transform level;			// A copy of the original level.
+
+	private string levelName = "Bordered";	// Name of the selected level.
+	private bool powerupsEnabled  =	false;
+	private bool obstaclesEnabled = false;
+
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
 	private Cell[][] grid;
 
+	// Starts a new game of snake given the values of the current parameters.
 	public void Initialise()
 	{
 		// Obtains the level from the level name and creates a duplicate to use.
-		origLevel = Extensions.FindObject(GameObject.Find("Levels"), 
+		origLevel = Extensions.FindObject(GameObject.Find("Levels"),
 		                              levelName).GetComponent<Transform>();
 		level = Instantiate(origLevel);
 		level.gameObject.SetActive(true);
@@ -58,28 +60,26 @@ public class GameManager : MonoBehaviour
 			}
 		}
 
-		// Activates the game canvas.
-		canvas.gameObject.SetActive(true);
+		canvas.gameObject.SetActive(true);	// Activates the game canvas.
+		score.text = "0"; 					// Score is reset
 
-		// currentSpeed is set to match the snake speed.
-		currentSpeed = snakeSpeed;
-
-		score.text = "0";
+		// Sets all 'current' parameters to the value of the original values.
+		speed = origSpeed;
 		tailPosX = origTailPosX;
 		tailPosY = origTailPosY;
-		snakeLength = origSnakeLength;
+		length = origLength;
 		tailDirection = origTailDirection;
 		headDirection = tailDirection;
 
 		// Places the snake and a food item on the grid.
-		PlaceSnake(tailPosX, tailPosY, snakeLength, tailDirection);
+		PlaceSnake(tailPosX, tailPosY, length, tailDirection);
 		PlaceFood();
 	}
 
 	// Update is called once per frame
 	private void Update()
 	{
-		if (Extensions.TimestepComplete(1 / currentSpeed))
+		if (Extensions.TimestepComplete(1 / speed))
 		{
 			// Obtains the new snake direction.
 			headDirection = DirectionExtensions.GetDirection(headDirection,
@@ -88,8 +88,8 @@ public class GameManager : MonoBehaviour
                              	Input.GetKey(moveDown),
                  				Input.GetKey(moveLeft));
 
-			// Calculates the new snake head position and checks if there
-			// will be a crash there.
+			// Calculates the new snake head position and checks if there will
+			// be a crash there.
 			int newHeadPosX = headPosX +
 				DirectionExtensions.DeltaX(headDirection);
 			int newHeadPosY = headPosY +
@@ -104,17 +104,16 @@ public class GameManager : MonoBehaviour
 			// Finds the cell type of the new position.
 			Cell.State newPosCellType = grid[newHeadPosX][newHeadPosY].cellType;
 
-			// Snake crash case
+			// Snake crash case.
 			if (newPosCellType != Cell.State.CLEAR &&
 			    newPosCellType != Cell.State.FOOD) {
 				SnakeCrashed();
 				return;
 			}
 
-			// If the new cell is of food type, score is incremented and food
-			// is replaced on the grid.
+			// Eat food case - increases length and replaces food.
 			if (newPosCellType == Cell.State.FOOD) {
-				snakeLength++;
+				length++;
 				PlaceFood();
 			}
 
@@ -122,7 +121,7 @@ public class GameManager : MonoBehaviour
 			// a body part if snake has a length greater than 2.
 			grid[newHeadPosX][newHeadPosY].SetCell(Cell.State.SNAKE_HEAD,
             	DirectionExtensions.Opposite(headDirection), headDirection);
-			if (snakeLength > 2) {
+			if (length > 2) {
 				grid[headPosX][headPosY].SetCell(Cell.State.SNAKE_BODY,
                 	DirectionExtensions.Opposite(headDirection), headDirection);
 			} else {
@@ -132,25 +131,25 @@ public class GameManager : MonoBehaviour
 			headPosX = newHeadPosX;
 			headPosY = newHeadPosY;
 
- 			// If the snake ate food, the tail is prevented from moving, thus
-			// incrementing the snake length.
+ 			// If the snake ate food, the tail is prevented from moving thus
+			// incrementing length.
 			if (newPosCellType == Cell.State.FOOD) {
 				UpdateScore(10); // For now, simply adds 10 points to score.
-			} 
-			// Otherwise allows tail to move by calculating the new pos/direction.
+			}
+			// Otherwise allows tail to move by calculating the new position.
 			else {
-				// Calculates the new tail position and sets the old tail cell clear.
+				// Calculates the new tail position and clears old tail cell.
 				grid[tailPosX][tailPosY].SetCell(Cell.State.CLEAR);
 				tailPosX += DirectionExtensions.DeltaX(tailDirection);
 				tailPosY += DirectionExtensions.DeltaY(tailDirection,
 								isColUpper(tailPosX));
 
-				// Corrects tail positions, then sets
+				// Corrects tail positions.
 				correctedPosition = CorrectPosition(tailPosX, tailPosY);
 				tailPosX = (int)correctedPosition.x;
 				tailPosY = (int)correctedPosition.y;
 
-				// Sets direction and type of new cell to be a tail.
+				// Sets direction and type of new cell to be tail.
 				tailDirection = grid[tailPosX][tailPosY].GetOutDirection();
 				grid[tailPosX][tailPosY].SetCell(Cell.State.SNAKE_TAIL,
 	            	DirectionExtensions.Opposite(tailDirection), tailDirection);
@@ -196,7 +195,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	// Takes an x and y coordinates as arguments and checks whether that position
+	// Takes x and y coordinates as arguments and checks whether that position
 	// is contained within the grid. If not, it returns a new position at the
 	// opposite edge to where the old position was out of bounds at.
 	private Vector2 CorrectPosition(int x, int y)
@@ -224,7 +223,7 @@ public class GameManager : MonoBehaviour
 		return new Vector2(newPosX, newPosY);
 	}
 
-	// Places a food item in a random position on the level.
+	// Places a food item in a random valid position on the level.
 	private void PlaceFood()
 	{
 		// Assumes there is at least one clear cell in the grid. If not clear,
@@ -246,8 +245,7 @@ public class GameManager : MonoBehaviour
 		return (col % 2 == 0);
 	}
 
-	// Allows the score to be updated at a certain event given several
-	// circumstances.
+	// Allows the score to be updated given several parameters.
 	private void UpdateScore(int rawPoints)
 	{
 		score.text = int.Parse(score.text) + rawPoints + "";
@@ -269,9 +267,9 @@ public class GameManager : MonoBehaviour
 	}
 
 	// Allows snake speed to be set
-	public void SetSnakeSpeed(float snakeSpeed)
+	public void SetSpeed(float speed)
 	{
-		this.snakeSpeed = (int)snakeSpeed;
+		this.speed = (int)speed;
 	}
 
 	// Toggles powerupsEnabled bool.

@@ -4,11 +4,10 @@ using System.Collections;
 /* Defines a hexagonal cell, which can possess several different states
  * and are arranged together to form the snake grid. */
 public class Cell : MonoBehaviour
-{	
+{
 	// These are the possible states that a cell can be in.
 	public enum State {CLEAR, OBSTACLE, FOOD, SNAKE_HEAD, SNAKE_BODY, SNAKE_TAIL};
-
-	public State cellType;		 	// The current state of the cell.
+	public State cellType;	// The current state of the cell.
 
 	// The in and out directions of the cell (if it is a snake type).
 	private Direction inDirection, outDirection;
@@ -24,18 +23,22 @@ public class Cell : MonoBehaviour
 	public void SetCell(State cellType)
 	{
 		this.cellType = cellType;
-		GetComponent<SpriteRenderer>().color = GameObject.Find("CellColor").GetComponent<CellColor>().GetColor(cellType);
+		GetComponent<SpriteRenderer>().color =
+			GameObject.Find("CellColor").GetComponent<CellColor>().GetColor(
+			cellType);
 	}
 
 	// This variant of SetCell() allows the snake in/out direction to be set as
 	// well.
 	public void SetCell(State cellType, Direction inDirection,
-						Direction outDirection)
+		Direction outDirection)
 	{
 		this.cellType = cellType;
 		this.inDirection = inDirection;
 		this.outDirection = outDirection;
-		GetComponent<SpriteRenderer>().color = GameObject.Find("CellColor").GetComponent<CellColor>().GetColor(cellType);
+		GetComponent<SpriteRenderer>().color =
+			GameObject.Find("CellColor").GetComponent<CellColor>().GetColor(
+			cellType);
 	}
 
 	// Getter method for outDirection()

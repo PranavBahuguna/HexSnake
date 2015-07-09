@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEditor;
 
-/* Custom editor for the Cell object - its primary function is to
- * automatically alter the colour of a cell in the editor window
- * depending on the state of the cell that is set in the inspector. */
+/* Custom editor for the Cell object - its primary function is to automatically
+ * alter the colour of a cell in the editor window depending on the state of the
+ * cell that is set in the inspector. */
 [CustomEditor(typeof(Cell))]
 [CanEditMultipleObjects]
 [ExecuteInEditMode]
@@ -25,6 +25,6 @@ public class CellEditor : Editor
 		foreach (GameObject obj in Selection.gameObjects) {
 			obj.GetComponent<Cell>().SetCell((Cell.State)cellType_Prop.intValue);
 		}
-		serializedObject.ApplyModifiedProperties ();
+		serializedObject.ApplyModifiedProperties();
 	}
 }

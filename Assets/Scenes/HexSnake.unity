@@ -9832,11 +9832,13 @@ MonoBehaviour:
   moveRight: 275
   moveDown: 274
   moveLeft: 276
-  tailPosX: 5
-  tailPosY: 5
-  snakeLength: 4
-  tailDirection: 0
+  origTailPosX: 5
+  origTailPosY: 5
+  origLength: 4
+  origTailDirection: 0
   gameOverScreen: {fileID: 1007263641}
+  canvas: {fileID: 1456965297}
+  score: {fileID: 125171998}
 --- !u!4 &1036598931
 Transform:
   m_ObjectHideFlags: 0
@@ -15389,6 +15391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9474a37e177180b48ab77743697fa6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1036598930}
+  currentMenu: {fileID: 25034760}
 --- !u!23 &1657047780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17534,6 +17538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9474a37e177180b48ab77743697fa6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1036598930}
+  currentMenu: {fileID: 1007263641}
 --- !u!23 &1901187422
 MeshRenderer:
   m_ObjectHideFlags: 0

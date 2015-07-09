@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/* To be attached to the pause menu's 'resume' button. This unpauses
- * the game. */
-public class ResumeGame : MonoBehaviour 
+/* To be attached to the pause menu's 'resume' button. This unpauses the game. */
+public class ResumeGame : MonoBehaviour
 {
 	private PauseGame pauseGame;	// PauseGame script accessor.
 

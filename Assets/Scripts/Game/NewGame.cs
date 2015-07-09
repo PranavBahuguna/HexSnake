@@ -4,9 +4,13 @@ using System.Collections;
 /* Starts a game of snake. */
 public class NewGame : MonoBehaviour 
 {
+	public GameManager manager;
+	public GameObject currentMenu;
+
 	public void OnMouseDown()
 	{
-		GameObject.Find("GM").GetComponent<GameManager>().enabled = true;
-		GameObject.Find("Main").SetActive(false);
+		manager.enabled = true;
+		manager.Initialise();
+		currentMenu.SetActive(false);
 	}
 }

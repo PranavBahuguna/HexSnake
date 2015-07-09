@@ -12,16 +12,22 @@ public class GameManager : MonoBehaviour
 	public KeyCode moveLeft;
 
 	// Parameters for snake placement on the Cell grid.
-	public int tailPosX, tailPosY, snakeLength;
-	public Direction tailDirection;
+	public int origTailPosX, origTailPosY, origSnakeLength;
+	public Direction origTailDirection;
 
+	public GameObject gameOverScreen;	// Access to game over screen.
+	public Canvas canvas;				// Access to the game canvas.
+	public Text score;					// The score displayed on UI.
+	private Transform origLevel;		// Access to the original level.
+	private Transform level;			// Access to a copy of the original level.
+
+	private int tailPosX, tailPosY, snakeLength;
+	private Direction tailDirection;
+	
 	private float snakeSpeed = 5;	// How quickly the snake moves.
 	private float currentSpeed; 	// The current speed of the snake.
 
-	private int levelNum;			// Number of the selected level.
-	private Transform level;		// Access to the actual level.
-	private Canvas canvas;			// Access to the game canvas.
-
+	private string levelName = "Bordered";	// Name of the selected level.
 	private bool powerupsEnabled  =	false;
 	private bool obstaclesEnabled = false;
 
@@ -29,21 +35,16 @@ public class GameManager : MonoBehaviour
 	private int headPosX, headPosY;
 	private Direction headDirection;
 
-	// Whether the snake segment has collided with something.
-	private bool snakeCrashed = false;
-
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
 	private Cell[][] grid;
 
-	// The current score displayed on UI
-	private Text score;
-
-	private void Start ()
+	public void Initialise()
 	{
-		// Obtains the level from the level number.
-		level = Extensions.FindObject(GameObject.Find("Levels"), 
-		                              "Level_" + levelNum).GetComponent<Transform>();
+		// Obtains the level from the level name and creates a duplicate to use.
+		origLevel = Extensions.FindObject(GameObject.Find("Levels"), 
+		                              levelName).GetComponent<Transform>();
+		level = Instantiate(origLevel);
 		level.gameObject.SetActive(true);
 
 		// Initialises and fills the grid array.
@@ -57,16 +58,18 @@ public class GameManager : MonoBehaviour
 			}
 		}
 
-		// Accesses and activates the game canvas.
-		canvas = Extensions.FindObject(transform.parent.gameObject,
-		                               "Game_Canvas").GetComponent<Canvas>();
+		// Activates the game canvas.
 		canvas.gameObject.SetActive(true);
-
-		// Obtains UI Text element for score.
-		score = GameObject.Find("Score_Number").GetComponent<Text>();
 
 		// currentSpeed is set to match the snake speed.
 		currentSpeed = snakeSpeed;
+
+		score.text = "0";
+		tailPosX = origTailPosX;
+		tailPosY = origTailPosY;
+		snakeLength = origSnakeLength;
+		tailDirection = origTailDirection;
+		headDirection = tailDirection;
 
 		// Places the snake and a food item on the grid.
 		PlaceSnake(tailPosX, tailPosY, snakeLength, tailDirection);
@@ -76,7 +79,7 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		if (Extensions.TimestepComplete(1 / currentSpeed) && !snakeCrashed)
+		if (Extensions.TimestepComplete(1 / currentSpeed))
 		{
 			// Obtains the new snake direction.
 			headDirection = DirectionExtensions.GetDirection(headDirection,
@@ -101,10 +104,10 @@ public class GameManager : MonoBehaviour
 			// Finds the cell type of the new position.
 			Cell.State newPosCellType = grid[newHeadPosX][newHeadPosY].cellType;
 
+			// Snake crash case
 			if (newPosCellType != Cell.State.CLEAR &&
 			    newPosCellType != Cell.State.FOOD) {
-				// For now, stops game.
-				Debug.Break();
+				SnakeCrashed();
 				return;
 			}
 
@@ -250,17 +253,25 @@ public class GameManager : MonoBehaviour
 		score.text = int.Parse(score.text) + rawPoints + "";
 	}
 
-	// levelNum setter.
-	public void SetLevel(int levelNum)
+	// Deals with event in which the snake crashes.
+	private void SnakeCrashed()
 	{
-		this.levelNum = levelNum;
+		Destroy(level.gameObject);
+		canvas.gameObject.SetActive(false);
+		gameOverScreen.SetActive(true);
+		this.enabled = false;
+	}
+
+	// levelName setter.
+	public void SetLevelName(string levelName)
+	{
+		this.levelName = levelName;
 	}
 
 	// Allows snake speed to be set
 	public void SetSnakeSpeed(float snakeSpeed)
 	{
 		this.snakeSpeed = (int)snakeSpeed;
-		print (this.snakeSpeed);
 	}
 
 	// Toggles powerupsEnabled bool.

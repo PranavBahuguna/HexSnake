@@ -11,7 +11,7 @@ public class PauseGame : MonoBehaviour
 	private void Start() 
 	{
 		gm = GetComponent<GameManager>();
-		pauseMenu.SetActive (false);
+		pauseMenu.SetActive(false);
 	}
 	
 	private void Update() 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEditor;
 
 /* Initialises the game and handles its execution behaviour */
 public class GameManager : MonoBehaviour
@@ -22,9 +23,8 @@ public class GameManager : MonoBehaviour
 	// Keeps track of the snake head position on the grid;
 	private int headPosX, headPosY;
 	private Direction headDirection;
-
-	private float origSpeed = 5;	// Orig value of snake movement speed.
-	private float speed; 			// The current speed of the snake.
+	
+	private float speed = 5; 			// The current speed of the snake.
 
 	public GameObject gameOverScreen;	// Access to game over screen.
 	public Canvas canvas;				// Access to the game canvas.
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 	private Transform origLevel;		// Access to the original level.
 	private Transform level;			// A copy of the original level.
 
-	private string levelName = "Bordered";	// Name of the selected level.
+	private string levelName = "Open";	// Name of the selected level.
 	private bool powerupsEnabled  =	false;
 	private bool obstaclesEnabled = false;
 
@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 	// Starts a new game of snake given the values of the current parameters.
 	public void Initialise()
 	{
+		this.enabled = true;
+
 		// Obtains the level from the level name and creates a duplicate to use.
 		origLevel = Extensions.FindObject(GameObject.Find("Levels"),
 		                              levelName).GetComponent<Transform>();
@@ -64,7 +66,6 @@ public class GameManager : MonoBehaviour
 		score.text = "0"; 					// Score is reset
 
 		// Sets all 'current' parameters to the value of the original values.
-		speed = origSpeed;
 		tailPosX = origTailPosX;
 		tailPosY = origTailPosY;
 		length = origLength;
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
 			// Snake crash case.
 			if (newPosCellType != Cell.State.CLEAR &&
 			    newPosCellType != Cell.State.FOOD) {
-				SnakeCrashed();
+				EndGame();
 				return;
 			}
 
@@ -252,7 +253,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	// Deals with event in which the snake crashes.
-	private void SnakeCrashed()
+	public void EndGame()
 	{
 		Destroy(level.gameObject);
 		canvas.gameObject.SetActive(false);
@@ -282,5 +283,11 @@ public class GameManager : MonoBehaviour
 	public void toggleObstacles()
 	{
 		obstaclesEnabled = !obstaclesEnabled;
+	}
+
+	// Quits the game.
+	public void Quit()
+	{
+		EditorApplication.ExecuteMenuItem("Edit/Play");
 	}
 }

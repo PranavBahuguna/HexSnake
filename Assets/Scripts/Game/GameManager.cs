@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 	private bool powerupsEnabled  =	false;
 	private bool obstaclesEnabled = false;
 
+	private bool gameRunning = false;	// Whether or not a game is running.
+
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
 	private Cell[][] grid;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 	public void Initialise()
 	{
 		this.enabled = true;
+		gameRunning = true;
 
 		// Obtains the level from the level name and creates a duplicate to use.
 		origLevel = Extensions.FindObject(GameObject.Find("Levels"),
@@ -258,6 +261,7 @@ public class GameManager : MonoBehaviour
 		Destroy(level.gameObject);
 		canvas.gameObject.SetActive(false);
 		gameOverScreen.SetActive(true);
+		gameRunning = false;
 		this.enabled = false;
 	}
 
@@ -283,6 +287,12 @@ public class GameManager : MonoBehaviour
 	public void toggleObstacles()
 	{
 		obstaclesEnabled = !obstaclesEnabled;
+	}
+
+	// Getter for gameRunning bool.
+	public bool IsGameRunning()
+	{
+		return gameRunning;
 	}
 
 	// Quits the game.

@@ -16,7 +16,7 @@ public class PauseGame : MonoBehaviour
 	
 	private void Update() 
 	{
-		if (Input.GetKeyUp (pause)) {
+		if (Input.GetKeyUp (pause) && gm.IsGameRunning()) {
 			Pause();
 		}
 	}

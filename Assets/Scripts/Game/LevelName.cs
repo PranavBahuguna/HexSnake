@@ -6,15 +6,20 @@ public class LevelName : MonoBehaviour {
 
 	public SlideShow levelSlideShow;
 	public GameManager GM;
+	private string levelName;
 
 	public void SetLevelName()
 	{
-		GetComponent<Text>().text = 
-			levelSlideShow.origSlides[levelSlideShow.GetSlideIndex()].name;
+		levelName = levelSlideShow.origSlides[levelSlideShow.GetSlideIndex()].name;
+	}
+
+	public void SetTextToLevelName(Text displayText)
+	{
+		displayText.text = levelName;
 	}
 
 	public void ConfirmLevel()
 	{
-		GM.SetLevelName(GetComponent<Text>().text);
+		GM.SetLevelName(levelName);
 	}
 }

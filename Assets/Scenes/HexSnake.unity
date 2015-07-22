@@ -4346,7 +4346,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456965294}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 20, y: 33.5}
@@ -4749,7 +4749,7 @@ RectTransform:
   m_Children:
   - {fileID: 370710676}
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -7}
@@ -7423,7 +7423,7 @@ RectTransform:
   m_Children:
   - {fileID: 957886493}
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 15, y: -15}
@@ -11585,6 +11585,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 881626498}
+        m_MethodName: SetTextToLevelName
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 881626496}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19098,7 +19109,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456965294}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 27}
@@ -20491,7 +20502,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -12.999999, y: -15}
@@ -21471,7 +21482,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 881626498}
+        m_MethodName: SetTextToLevelName
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 881626496}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -21797,7 +21819,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -13, y: -22}
@@ -33560,7 +33582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Some level
+  m_Text: 'Open
 
 
 '
@@ -38545,13 +38567,11 @@ MonoBehaviour:
   moveRight: 275
   moveDown: 274
   moveLeft: 276
-  origTailPosX: 5
-  origTailPosY: 5
-  origLength: 4
-  origTailDirection: 0
   gameOverScreen: {fileID: 1007263641}
   canvas: {fileID: 1456965297}
   score: {fileID: 125171998}
+  bestScore: {fileID: 1040855713}
+  finalScore: {fileID: 1192650813}
 --- !u!4 &1036598931
 Transform:
   m_ObjectHideFlags: 0
@@ -44033,7 +44053,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -11.5, y: -7}
@@ -44836,7 +44856,7 @@ RectTransform:
   m_Children:
   - {fileID: 1352840576}
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 1}
@@ -47090,7 +47110,7 @@ Transform:
   - {fileID: 1475552382}
   - {fileID: 1578062764}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1250096940
 GameObject:
   m_ObjectHideFlags: 0
@@ -50294,6 +50314,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1349553120}
+  - 114: {fileID: 1349553121}
   m_Layer: 0
   m_Name: Open
   m_TagString: Untagged
@@ -50326,6 +50347,21 @@ Transform:
   - {fileID: 2034083580}
   m_Father: {fileID: 1249476546}
   m_RootOrder: 0
+--- !u!114 &1349553121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349553119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailPosX: 6
+  tailPosY: 5
+  snakeLength: 4
+  tailDirection: 0
 --- !u!1 &1351034801
 GameObject:
   m_ObjectHideFlags: 0
@@ -53957,8 +53993,8 @@ RectTransform:
   m_Children:
   - {fileID: 1894874278}
   - {fileID: 1358880646}
-  - {fileID: 473551384}
   - {fileID: 125171997}
+  - {fileID: 473551384}
   - {fileID: 1040855712}
   m_Father: {fileID: 1527179527}
   m_RootOrder: 2
@@ -55006,6 +55042,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1475552382}
+  - 114: {fileID: 1475552383}
   m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
@@ -55038,6 +55075,21 @@ Transform:
   - {fileID: 2101647053}
   m_Father: {fileID: 1249476546}
   m_RootOrder: 4
+--- !u!114 &1475552383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1475552381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailPosX: 1
+  tailPosY: 1
+  snakeLength: 4
+  tailDirection: 1
 --- !u!1 &1475982844
 GameObject:
   m_ObjectHideFlags: 0
@@ -56576,7 +56628,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 15, y: -22}
@@ -56607,7 +56659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Open Field
+  m_Text: 'Open
 
 
 
@@ -57497,7 +57549,7 @@ Transform:
   - {fileID: 1036598931}
   - {fileID: 1456965294}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1529360778
 GameObject:
   m_ObjectHideFlags: 0
@@ -58208,6 +58260,86 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
   m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+--- !u!1 &1553791446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1553791447}
+  - 222: {fileID: 1553791450}
+  - 114: {fileID: 1553791449}
+  - 114: {fileID: 1553791448}
+  m_Layer: 5
+  m_Name: SnakeSpeed_Number
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1553791447
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553791446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1677491045}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 15.499999, y: 18.0000038}
+  m_SizeDelta: {x: 22, y: 10}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1553791448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553791446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d06d7dbad3e441e39777d35d9af4d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1553791449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553791446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 156ea65594f5bea4aba2ac1ff8d5607d, type: 3}
+    m_FontSize: 6
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 5
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '5
+
+'
+--- !u!222 &1553791450
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553791446}
 --- !u!1 &1556711888
 GameObject:
   m_ObjectHideFlags: 0
@@ -58886,6 +59018,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1578062764}
+  - 114: {fileID: 1578062765}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -58918,6 +59051,21 @@ Transform:
   - {fileID: 350216635}
   m_Father: {fileID: 1249476546}
   m_RootOrder: 5
+--- !u!114 &1578062765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1578062763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailPosX: 1
+  tailPosY: 5
+  snakeLength: 4
+  tailDirection: 1
 --- !u!1 &1578587401
 GameObject:
   m_ObjectHideFlags: 0
@@ -60500,6 +60648,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1623119477}
+  - 114: {fileID: 1623119478}
   m_Layer: 0
   m_Name: Bordered
   m_TagString: Untagged
@@ -60532,6 +60681,21 @@ Transform:
   - {fileID: 1785508816}
   m_Father: {fileID: 1249476546}
   m_RootOrder: 1
+--- !u!114 &1623119478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1623119476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailPosX: 6
+  tailPosY: 5
+  snakeLength: 4
+  tailDirection: 0
 --- !u!1 &1623579265
 GameObject:
   m_ObjectHideFlags: 0
@@ -61348,7 +61512,7 @@ RectTransform:
   m_Children:
   - {fileID: 108450677}
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -35}
@@ -62395,6 +62559,7 @@ RectTransform:
   m_Children:
   - {fileID: 2033218739}
   - {fileID: 670530384}
+  - {fileID: 1553791447}
   - {fileID: 1822159836}
   - {fileID: 1815904868}
   - {fileID: 1195980130}
@@ -66327,6 +66492,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 881626498}
+        m_MethodName: SetTextToLevelName
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1510391710}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1784065764
@@ -67576,7 +67752,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -11.5, y: 1}
@@ -67847,7 +68023,7 @@ RectTransform:
   - {fileID: 1520105726}
   - {fileID: 1510590750}
   m_Father: {fileID: 1677491045}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 10}
@@ -67901,6 +68077,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1036598930}
         m_MethodName: SetSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1553791448}
+        m_MethodName: SetDisplayTextToValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -70566,6 +70753,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1891328430}
+  - 114: {fileID: 1891328431}
   m_Layer: 0
   m_Name: Trisection
   m_TagString: Untagged
@@ -70598,6 +70786,21 @@ Transform:
   - {fileID: 508295356}
   m_Father: {fileID: 1249476546}
   m_RootOrder: 3
+--- !u!114 &1891328431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891328429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailPosX: 2
+  tailPosY: 1
+  snakeLength: 4
+  tailDirection: 1
 --- !u!1 &1891738800
 GameObject:
   m_ObjectHideFlags: 0
@@ -78939,6 +79142,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2129666827}
+  - 114: {fileID: 2129666828}
   m_Layer: 0
   m_Name: Sliced
   m_TagString: Untagged
@@ -78971,6 +79175,21 @@ Transform:
   - {fileID: 1487458364}
   m_Father: {fileID: 1249476546}
   m_RootOrder: 2
+--- !u!114 &2129666828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129666826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tailPosX: 4
+  tailPosY: 5
+  snakeLength: 4
+  tailDirection: 1
 --- !u!1 &2130478405
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
 	public KeyCode moveDown;
 	public KeyCode moveLeft;
 
-	// Parameters for snake placement on the Cell grid.
-	public int origTailPosX, origTailPosY, origLength;
-	public Direction origTailDirection;
-
 	// Copies of the original placement parameters to record current position.
 	private int tailPosX, tailPosY, length;
 	private Direction tailDirection;
@@ -28,9 +24,11 @@ public class GameManager : MonoBehaviour
 
 	public GameObject gameOverScreen;	// Access to game over screen.
 	public Canvas canvas;				// Access to the game canvas.
-	public Text score;					// The score displayed on UI.
-	private Transform origLevel;		// Access to the original level.
-	private Transform level;			// A copy of the original level.
+	public Text score;					// Score displayed on UI.
+	public Text bestScore;				// Best score displayed on UI.
+	public Text finalScore;				// Score displayed on Game Over UI.
+	private Level origLevel;			// Access to the original level.
+	private Level level;				// A copy of the original level.
 
 	private string levelName = "Open";	// Name of the selected level.
 	private bool powerupsEnabled  =	false;
@@ -50,16 +48,16 @@ public class GameManager : MonoBehaviour
 
 		// Obtains the level from the level name and creates a duplicate to use.
 		origLevel = Extensions.FindObject(GameObject.Find("Levels"),
-		                              levelName).GetComponent<Transform>();
+		                              levelName).GetComponent<Level>();
 		level = Instantiate(origLevel);
 		level.gameObject.SetActive(true);
 
 		// Initialises and fills the grid array.
-		grid = new Cell[level.childCount][];
-		for (int i = 0; i < level.childCount; i++) {
-			Transform col = level.FindChild("Cells_Col_" + i.ToString());
+		grid = new Cell[level.transform.childCount][];
+		for (int i = 0; i < level.transform.childCount; i++) {
+			Transform col = level.transform.FindChild("Cells_Col_" + i.ToString());
 			grid[i] = new Cell[col.childCount];
-			for (int j = 0; j < level.GetChild(i).childCount; j++) {
+			for (int j = 0; j < level.transform.GetChild(i).childCount; j++) {
 				Transform row = col.FindChild("Cell_" + j.ToString());
 				grid[i][j] = (Cell)row.GetComponent(typeof(Cell));
 			}
@@ -69,10 +67,10 @@ public class GameManager : MonoBehaviour
 		score.text = "0"; 					// Score is reset
 
 		// Sets all 'current' parameters to the value of the original values.
-		tailPosX = origTailPosX;
-		tailPosY = origTailPosY;
-		length = origLength;
-		tailDirection = origTailDirection;
+		tailPosX = level.tailPosX;
+		tailPosY = level.tailPosY;
+		length = level.snakeLength;
+		tailDirection = level.tailDirection;
 		headDirection = tailDirection;
 
 		// Places the snake and a food item on the grid.
@@ -258,6 +256,7 @@ public class GameManager : MonoBehaviour
 	// Deals with event in which the snake crashes.
 	public void EndGame()
 	{
+		finalScore.text = score.text;
 		Destroy(level.gameObject);
 		canvas.gameObject.SetActive(false);
 		gameOverScreen.SetActive(true);

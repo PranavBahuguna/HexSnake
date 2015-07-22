@@ -31,6 +31,13 @@ public class SlideShow : MonoBehaviour
 			slide.localScale = slideScale;
 			slides[i] = slide;
 		}
+
+		// To reach the slide that it was previously on, ChangeSlide() is
+		// called by slideIndex times.
+		for (int i = 0; i < slideIndex; i++) {
+			slideIndex -= 1;	// This is to prevent slideIndex increment.
+			ChangeSlide(true);
+		}
 	}
 
 	public void ChangeSlide(bool right)
@@ -57,7 +64,6 @@ public class SlideShow : MonoBehaviour
 	// Destroys the slides and resets slideIndex.
 	public void Close()
 	{
-		slideIndex = 0;
 		foreach (Transform slide in slides) {
 			Destroy(slide.gameObject);
 		}

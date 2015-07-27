@@ -8,7 +8,7 @@ public static class Extensions
 	 * parent object for child objects that match the supplied name. */
 	public static GameObject FindObject(GameObject parent, string name)
 	{
-		Transform[] transforms = parent.GetComponentsInChildren<Transform> (true);
+		Transform[] transforms = parent.GetComponentsInChildren<Transform>(true);
 		foreach(Transform t in transforms){
 			if(t.name == name){
 				return t.gameObject;

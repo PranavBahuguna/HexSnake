@@ -6,18 +6,18 @@ public class PauseGame : MonoBehaviour
 {
 	public KeyCode pause;			// Pause key.
 	public GameObject pauseMenu;	// Accessor to the pause menu.
-	private GameManager gm; 		// Accessor to GameManager script.
+	private GameManager GM; 		// Accessor to GameManager script.
 
 	private void Start()
 	{
-		gm = GetComponent<GameManager>();
+		GM = GetComponent<GameManager>();
 		pauseMenu.SetActive(false);		// Off by default.
 	}
 
 	// Calls Pause() if pause key is pressed during gameplay.
 	private void Update()
 	{
-		if (Input.GetKeyUp (pause) && gm.IsGameRunning()) {
+		if (Input.GetKeyUp (pause) && GM.enabled) {
 			Pause();
 		}
 	}
@@ -25,7 +25,7 @@ public class PauseGame : MonoBehaviour
 	// Pauses/unpauses game, based on whether it was previously paused or not.
 	public void Pause()
 	{
-		gm.enabled = !gm.enabled;
+		GM.enabled = !GM.enabled;
 		pauseMenu.SetActive(!pauseMenu.activeSelf);
 	}
 }

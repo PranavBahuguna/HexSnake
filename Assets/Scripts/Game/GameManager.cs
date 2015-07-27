@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
 	private bool powerupsEnabled  =	false;
 	private bool obstaclesEnabled = false;
 
-	private bool gameRunning = false;	// Whether or not a game is running.
-
 	// A 2D grid of Cell objects that will be filled with existing Cell objects
 	// in the scene.
 	private Cell[][] grid;
@@ -44,7 +42,6 @@ public class GameManager : MonoBehaviour
 	public void Initialise()
 	{
 		this.enabled = true;	// Allows updating
-		gameRunning = true;
 
 		// Obtains the level from the level name and creates a duplicate to use.
 		origLevel = Extensions.FindObject(GameObject.Find("Levels"),
@@ -55,7 +52,8 @@ public class GameManager : MonoBehaviour
 		// Initialises and fills the grid array.
 		grid = new Cell[level.transform.childCount][];
 		for (int i = 0; i < level.transform.childCount; i++) {
-			Transform col = level.transform.FindChild("Cells_Col_" + i.ToString());
+			Transform col = level.transform.FindChild("Cells_Col_" +
+				i.ToString());
 			grid[i] = new Cell[col.childCount];
 			for (int j = 0; j < level.transform.GetChild(i).childCount; j++) {
 				Transform row = col.FindChild("Cell_" + j.ToString());
@@ -136,7 +134,8 @@ public class GameManager : MonoBehaviour
  			// If the snake ate food, the tail is prevented from moving thus
 			// incrementing length.
 			if (newPosCellType == Cell.State.FOOD) {
-				UpdateScore((int)speed);	// Points added is equal to speed of snake.
+				// Points added is equal to speed of snake
+				UpdateScore((int)speed);
 			}
 			// Otherwise allows tail to move by calculating the new position.
 			else {
@@ -257,11 +256,24 @@ public class GameManager : MonoBehaviour
 	public void EndGame()
 	{
 		finalScore.text = score.text;
-		Destroy(level.gameObject);
+		DestroyLevel();
 		canvas.gameObject.SetActive(false);
 		gameOverScreen.SetActive(true);
-		gameRunning = false;
 		this.enabled = false;
+	}
+
+	// Destroys the level copy
+	public void DestroyLevel()
+	{
+		if (level != null) {
+			Destroy(level.gameObject);
+		}
+	}
+
+	// Allows the level copy to be set active or not.
+	public void SetLevelActive(bool isActive)
+	{
+		level.gameObject.SetActive(isActive);
 	}
 
 	// levelName setter.
@@ -286,12 +298,6 @@ public class GameManager : MonoBehaviour
 	public void toggleObstacles()
 	{
 		obstaclesEnabled = !obstaclesEnabled;
-	}
-
-	// Getter for gameRunning bool.
-	public bool IsGameRunning()
-	{
-		return gameRunning;
 	}
 
 	// Quits the game.

@@ -22,7 +22,7 @@ public class LevelName : MonoBehaviour {
 		displayText.text = levelName;
 	}
 
-	// Sets the actual level to be played to the one whose name is levelName. 
+	// Sets the actual level to be played to the one whose name is levelName.
 	public void ConfirmLevel()
 	{
 		GM.SetLevelName(levelName);

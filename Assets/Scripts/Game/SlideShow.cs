@@ -57,19 +57,19 @@ public class SlideShow : MonoBehaviour
 		// slideIndex is decremented if moving left, incremented if right.
 		slideIndex += right ? 1 : -1;
 		SetSlideButtonsStates();
-		
-		// If left, the slides will be moved in the opposite direction. This
-		// is done by moving the slides by a negative amount.
+
+		// If left, the slides will be moved in the opposite direction. This is
+		// done by moving the slides by a negative amount.
 		float currentMoveAmount = right ? -moveAmount : moveAmount;
-		
+
 		// Moves each slide horizontally by moveAmount.
 		foreach (Transform slide in slides) {
 			slide.Translate (new Vector3 (currentMoveAmount, 0));
 		}
 	}
 
-	// Enables/disables the left/right buttons based on whether the
-	// slideshow has reached its bounds.
+	// Enables/disables the left/right buttons based on whether the slideshow
+	// has reached its bounds.
 	public void SetSlideButtonsStates()
 	{
 		if (slideIndex == slides.Length - 1) {

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 	// Keeps track of the snake head position on the grid;
 	private int headPosX, headPosY;
 	private Direction headDirection;
-	
+
 	private float speed = 5; 			// The current speed of the snake.
 
 	public GameObject gameOverScreen;	// Access to game over screen.
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 	// Starts a new game of snake given the values of the current parameters.
 	public void Initialise()
 	{
-		this.enabled = true;
+		this.enabled = true;	// Allows updating
 		gameRunning = true;
 
 		// Obtains the level from the level name and creates a duplicate to use.
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
  			// If the snake ate food, the tail is prevented from moving thus
 			// incrementing length.
 			if (newPosCellType == Cell.State.FOOD) {
-				UpdateScore(10); // For now, simply adds 10 points to score.
+				UpdateScore((int)speed);	// Points added is equal to speed of snake.
 			}
 			// Otherwise allows tail to move by calculating the new position.
 			else {

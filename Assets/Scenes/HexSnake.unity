@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &60015971
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1674,7 +1674,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &60922459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,7 +3709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &109430878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3735,7 +3735,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &111713425
 GameObject:
   m_ObjectHideFlags: 0
@@ -8817,7 +8817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &236655533
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8843,7 +8843,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &238398520
 GameObject:
   m_ObjectHideFlags: 0
@@ -10550,7 +10550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &273874358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10576,7 +10576,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &274234098
 GameObject:
   m_ObjectHideFlags: 0
@@ -10617,7 +10617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &274234101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10643,7 +10643,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &274717299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11546,12 +11546,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_DisabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
@@ -11978,7 +11978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &297030968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12004,7 +12004,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &301413659
 GameObject:
   m_ObjectHideFlags: 0
@@ -13332,7 +13332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &341747525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13358,7 +13358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &341884368
 GameObject:
   m_ObjectHideFlags: 0
@@ -14109,7 +14109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &353827776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14135,7 +14135,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &356015381
 GameObject:
   m_ObjectHideFlags: 0
@@ -14176,7 +14176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &356015384
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14202,7 +14202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &356787088
 GameObject:
   m_ObjectHideFlags: 0
@@ -14725,7 +14725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &364030245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14751,7 +14751,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &369874735
 GameObject:
   m_ObjectHideFlags: 0
@@ -15525,7 +15525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &382581696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15551,7 +15551,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &384445219
 GameObject:
   m_ObjectHideFlags: 0
@@ -17203,7 +17203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &424738471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17229,7 +17229,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &430208288
 GameObject:
   m_ObjectHideFlags: 0
@@ -17404,7 +17404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &431053359
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17430,7 +17430,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &431209719
 GameObject:
   m_ObjectHideFlags: 0
@@ -18652,7 +18652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &460715535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18678,7 +18678,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &463419702
 GameObject:
   m_ObjectHideFlags: 0
@@ -20447,7 +20447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &522010969
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20473,7 +20473,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &522835262
 GameObject:
   m_ObjectHideFlags: 0
@@ -21360,7 +21360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &542769391
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21386,7 +21386,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &544351192
 GameObject:
   m_ObjectHideFlags: 0
@@ -21440,7 +21440,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
@@ -22138,7 +22138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &563415752
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22164,7 +22164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &563483478
 GameObject:
   m_ObjectHideFlags: 0
@@ -24925,7 +24925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &637866433
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24951,7 +24951,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &637902332
 GameObject:
   m_ObjectHideFlags: 0
@@ -26985,7 +26985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &693477931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27011,7 +27011,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &694970822
 GameObject:
   m_ObjectHideFlags: 0
@@ -27588,7 +27588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &703240571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27614,7 +27614,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &704479452
 GameObject:
   m_ObjectHideFlags: 0
@@ -28057,7 +28057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &717146742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28083,7 +28083,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &717901335
 GameObject:
   m_ObjectHideFlags: 0
@@ -28775,7 +28775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &742348724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28801,7 +28801,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &743129850
 GameObject:
   m_ObjectHideFlags: 0
@@ -29244,7 +29244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &759575050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29270,7 +29270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &763021352
 GameObject:
   m_ObjectHideFlags: 0
@@ -29646,7 +29646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &773066319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29672,7 +29672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &774004935
 GameObject:
   m_ObjectHideFlags: 0
@@ -30949,7 +30949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &802709316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30975,7 +30975,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &803908934
 GameObject:
   m_ObjectHideFlags: 0
@@ -31351,7 +31351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &812972578
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31377,7 +31377,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &813187325
 GameObject:
   m_ObjectHideFlags: 0
@@ -31552,7 +31552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &817224849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31578,7 +31578,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &823696126
 GameObject:
   m_ObjectHideFlags: 0
@@ -32597,7 +32597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &854933769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32623,7 +32623,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &858230008
 GameObject:
   m_ObjectHideFlags: 0
@@ -33495,7 +33495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &879729235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33521,7 +33521,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &881626494
 GameObject:
   m_ObjectHideFlags: 0
@@ -33846,7 +33846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &887250226
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33872,7 +33872,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &887483880
 GameObject:
   m_ObjectHideFlags: 0
@@ -34181,7 +34181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &894262339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34207,7 +34207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &894893623
 GameObject:
   m_ObjectHideFlags: 0
@@ -34691,7 +34691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &898915973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34717,7 +34717,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &908433146
 GameObject:
   m_ObjectHideFlags: 0
@@ -35307,7 +35307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &939057735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35333,7 +35333,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &942114263
 GameObject:
   m_ObjectHideFlags: 0
@@ -36149,7 +36149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &968014987
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36175,7 +36175,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &968240225
 GameObject:
   m_ObjectHideFlags: 0
@@ -36724,7 +36724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &973486901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36750,7 +36750,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &974770334
 GameObject:
   m_ObjectHideFlags: 0
@@ -37260,7 +37260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &980186528
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37286,7 +37286,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &981150504
 GameObject:
   m_ObjectHideFlags: 0
@@ -38374,7 +38374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1031615237
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38400,7 +38400,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1032925448
 GameObject:
   m_ObjectHideFlags: 0
@@ -40037,7 +40037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1069133161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40063,7 +40063,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1073962245
 GameObject:
   m_ObjectHideFlags: 0
@@ -41176,7 +41176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1091867387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41202,7 +41202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1092256532
 GameObject:
   m_ObjectHideFlags: 0
@@ -42395,7 +42395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1114670550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42421,7 +42421,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1120153149
 GameObject:
   m_ObjectHideFlags: 0
@@ -42462,7 +42462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1120153152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42488,7 +42488,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1120374405
 GameObject:
   m_ObjectHideFlags: 0
@@ -43797,7 +43797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1165945129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43823,7 +43823,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1167452705
 GameObject:
   m_ObjectHideFlags: 0
@@ -44494,7 +44494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1191168342
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44520,7 +44520,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1192650811
 GameObject:
   m_ObjectHideFlags: 0
@@ -48160,7 +48160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1282805967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48186,7 +48186,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1283850201
 GameObject:
   m_ObjectHideFlags: 0
@@ -49300,7 +49300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1326282825
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49326,7 +49326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1328466408
 GameObject:
   m_ObjectHideFlags: 0
@@ -49904,7 +49904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1338251649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49930,7 +49930,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1340870099
 GameObject:
   m_ObjectHideFlags: 0
@@ -51424,7 +51424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1382518565
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51450,7 +51450,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1383125669
 GameObject:
   m_ObjectHideFlags: 0
@@ -52067,7 +52067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1396401217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52093,7 +52093,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1396556926
 GameObject:
   m_ObjectHideFlags: 0
@@ -53293,7 +53293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1438694380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53319,7 +53319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1443476797
 GameObject:
   m_ObjectHideFlags: 0
@@ -55459,7 +55459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1484248785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55485,7 +55485,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1487458363
 GameObject:
   m_ObjectHideFlags: 0
@@ -55901,7 +55901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1498741705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55927,7 +55927,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1503924440
 GameObject:
   m_ObjectHideFlags: 0
@@ -57018,7 +57018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1513663125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57044,7 +57044,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1517058910
 GameObject:
   m_ObjectHideFlags: 0
@@ -57393,7 +57393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1520084434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57419,7 +57419,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1520105725
 GameObject:
   m_ObjectHideFlags: 0
@@ -59062,10 +59062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaf3a468c7e84ec888387da9632c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tailPosX: 1
+  tailPosX: 10
   tailPosY: 5
   snakeLength: 4
-  tailDirection: 1
+  tailDirection: 0
 --- !u!1 &1578587401
 GameObject:
   m_ObjectHideFlags: 0
@@ -61905,7 +61905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1653883410
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61931,7 +61931,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1654276138
 GameObject:
   m_ObjectHideFlags: 0
@@ -61972,7 +61972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1654276141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61998,7 +61998,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1655967812
 GameObject:
   m_ObjectHideFlags: 0
@@ -62671,7 +62671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1679426600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -62697,7 +62697,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1680675006
 GameObject:
   m_ObjectHideFlags: 0
@@ -63421,7 +63421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1690177162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63447,7 +63447,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1698505170
 GameObject:
   m_ObjectHideFlags: 0
@@ -64994,7 +64994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1739987981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65020,7 +65020,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1741865816
 GameObject:
   m_ObjectHideFlags: 0
@@ -65101,7 +65101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1742607775
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65127,7 +65127,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1746350328
 GameObject:
   m_ObjectHideFlags: 0
@@ -65647,7 +65647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1757358299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65673,7 +65673,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1757831027
 GameObject:
   m_ObjectHideFlags: 0
@@ -67456,7 +67456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1809748912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -67482,7 +67482,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1810074980
 GameObject:
   m_ObjectHideFlags: 0
@@ -68087,7 +68087,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1553791448}
-        m_MethodName: SetDisplayTextToValue
+        m_MethodName: SetTextToValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -68139,7 +68139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1822662178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68165,7 +68165,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1824159724
 GameObject:
   m_ObjectHideFlags: 0
@@ -71795,7 +71795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1919377612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71821,7 +71821,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1920050983
 GameObject:
   m_ObjectHideFlags: 0
@@ -71969,7 +71969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &1926040386
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71995,7 +71995,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &1926412225
 GameObject:
   m_ObjectHideFlags: 0
@@ -72748,7 +72748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 1
+  cellType: 0
 --- !u!212 &1949204939
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72774,7 +72774,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
+  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
 --- !u!1 &1951504764
 GameObject:
   m_ObjectHideFlags: 0
@@ -77130,7 +77130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &2073428473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77156,7 +77156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &2074530462
 GameObject:
   m_ObjectHideFlags: 0
@@ -77304,7 +77304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &2075713895
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77330,7 +77330,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &2076956509
 GameObject:
   m_ObjectHideFlags: 0
@@ -77639,7 +77639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &2081816844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77665,7 +77665,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}
 --- !u!1 &2083824870
 GameObject:
   m_ObjectHideFlags: 0
@@ -79766,7 +79766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2aeb0bcd2517e4ca1036507c5f69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 1
 --- !u!212 &2140480010
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79792,4 +79792,4 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 423a83b5b0a8e024784aa83a243a38b8, type: 3}
-  m_Color: {r: .0457936749, g: .889705896, b: .0865343362, a: 1}
+  m_Color: {r: .392156869, g: .392156869, b: .392156869, a: 1}

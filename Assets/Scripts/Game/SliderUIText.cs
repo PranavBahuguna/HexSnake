@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class HelperFunctions : MonoBehaviour 
+/* This class contains a method that allows a slider to set the
+ * text to a float value produced by the slider. */
+public class SliderUIText : MonoBehaviour 
 {
-	// Sets the text of a GUI element to the value given by a
-	// GUI slider value.
 	public void SetTextToValue(float value)
 	{
 		GetComponent<Text>().text = value.ToString();

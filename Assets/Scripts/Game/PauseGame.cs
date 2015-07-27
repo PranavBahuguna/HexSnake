@@ -4,25 +4,25 @@ using System.Collections;
 /* Provides a method to allow the game to be paused on/off */
 public class PauseGame : MonoBehaviour
 {
-	public KeyCode pause;			// Pause key
+	public KeyCode pause;			// Pause key.
 	public GameObject pauseMenu;	// Accessor to the pause menu.
 	private GameManager gm; 		// Accessor to GameManager script.
-	
-	private void Start() 
+
+	private void Start()
 	{
 		gm = GetComponent<GameManager>();
-		pauseMenu.SetActive(false);
+		pauseMenu.SetActive(false);		// Off by default.
 	}
-	
-	private void Update() 
+
+	// Calls Pause() if pause key is pressed during gameplay.
+	private void Update()
 	{
 		if (Input.GetKeyUp (pause) && gm.IsGameRunning()) {
 			Pause();
 		}
 	}
 
-	// Carries out the various actions involved when pausing/unpausing
-	// the game.
+	// Pauses/unpauses game, based on whether it was previously paused or not.
 	public void Pause()
 	{
 		gm.enabled = !gm.enabled;
